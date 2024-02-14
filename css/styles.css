@@ -7,6 +7,7 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 *,
 *:before,
@@ -195,22 +196,12 @@ img {
 }
 
 .seguridad {
+  margin-top: 3rem;
   background-color: var(--primario);
   padding: 10rem 0;
   position: relative;
-}
-.seguridad::before,
-.seguridad::after {
-  background-color: var(--blanco);
-  content: "";
-  height: 20rem;
-  width: 100%;
-  position: absolute;
-}
-.seguridad::before {
-}
-
-.seguridad::after {
+  background-color: var(--primario);
+  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
 }
 
 .seguridad__heading {
@@ -228,4 +219,13 @@ img {
     column-gap: 5rem;
     align-items: center;
   }
+}
+
+@media (min-width: 768px) {
+    .comisiones__grid{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 5rem;
+        align-items: center;
+    }
 }
