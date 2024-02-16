@@ -1,5 +1,6 @@
 :root {
   --primario: #6834a6;
+  --secundario: #4c257c;
   --blanco: #fff;
   --negro: #000000;
   --fuentePrincipal: "Poppins", sans-serif;
@@ -151,7 +152,7 @@ img {
     transition: all 0.3s ease;
   }
   .navegacion__link:hover {
-    background-color: #4c257c;
+    background-color: var(--secundario);
     border-radius: 0.5rem;
   }
 }
@@ -184,12 +185,32 @@ img {
 .listado__elemento:hover {
   transform: scale(1.1);
 }
+@media (min-width: 768px) {
+  .listado__elemento--2col {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+}
 .listado__heading {
   color: var(--primario);
   font-size: 3rem;
   margin: 0;
 }
-
+.listado__numero {
+  color: var(--primario);
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+  font-size: 6rem;
+}
+@media (min-width: 768px) {
+  .listado__numero {
+    flex-basis: 20rem;
+    font-size: 4rem;
+  }
+}
 .listado__texto {
   margin: 0;
   font-size: 2rem;
@@ -197,7 +218,6 @@ img {
 
 .seguridad {
   margin-top: 3rem;
-  background-color: var(--primario);
   padding: 10rem 0;
   position: relative;
   background-color: var(--primario);
@@ -208,7 +228,7 @@ img {
   color: var(--blanco);
 }
 .listado__elemento--morado {
-  background-color: #4c257c;
+  background-color: var(--secundario);
   color: var(--blanco);
 }
 
@@ -222,10 +242,106 @@ img {
 }
 
 @media (min-width: 768px) {
-    .comisiones__grid{
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-        column-gap: 5rem;
-        align-items: center;
-    }
+  .comisiones__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 5rem;
+    align-items: flex-end;
+  }
+}
+@media (min-width: 998px) {
+  .comisiones__grid {
+    align-items: center;
+  }
+}
+.comisiones__texto {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+  .comisiones__texto {
+    text-align: left;
+  }
+}
+
+.testimoniales {
+  background-color: var(--primario);
+  padding: 5rem 0;
+}
+.testimoniales__heading {
+  color: var(--blanco);
+}
+.testimoniales__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+}
+@media (min-width: 768px) {
+  .testimoniales__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.testimonial {
+  background-color: var(--secundario);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  color: var(--blanco);
+  box-shadow: 0px 0px 10px 2px rgba(52, 24, 86, 0.3);
+  position: relative;
+}
+.testimonial__texto {
+  padding-left: 4rem;
+}
+.testimonial__texto::before {
+  content: "";
+  background-image: url(../img/comilla.png);
+  background-size: 3rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 3rem;
+  height: 3rem;
+  display: block;
+  position: absolute;
+  top: 2rem;
+  left: 1rem;
+}
+.testimonial__autor {
+  text-align: right;
+  font-weight: 700;
+}
+
+.footer {
+  background-color: var(--secundario);
+  padding: 3rem 0;
+}
+@media (min-width: 768px) {
+  .footer__grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.footer__logo {
+  width: 20rem;
+  margin: 0 auto 4rem auto;
+}
+
+@media (min-width: 768px) {
+  .footer__logo {
+    margin: 0;
+  }
+}
+
+.navegacion__link--primario {
+  color: var(--blanco);
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+@media (min-width: 768px) {
+  .navegacion__link--primario:hover {
+    background-color: var(--primario);
+    border-radius: 0.5rem;
+  }
 }
